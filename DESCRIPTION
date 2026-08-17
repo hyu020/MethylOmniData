@@ -1,0 +1,14 @@
+Package: MethylOmniData
+Type: Package
+Title: Versioned Model and Reference Data for MethylOmni
+Version: 0.2.1.9000
+Authors@R: person("MethylOmni", "Development Team", role = c("aut", "cre"), email = "methylomni@example.org")
+Description: Provides versioned coefficient tables and reference matrices used
+    by MethylOmni. Each resource is accompanied by source, checksum, and
+    redistribution metadata. This development snapshot separates data from the
+    lightweight computational package.
+License: GPL-3
+Encoding: UTF-8
+Depends: R (>= 4.2.0)
+Imports: utils
+RoxygenNote: 7.3.2

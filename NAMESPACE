@@ -1,0 +1,6 @@
+export(clock_resource_path)
+export(complex_resource_path)
+export(reference_resource_path)
+export(methylomni_data_manifest)
+export(omniage_resource_path)
+importFrom(utils,read.csv)
