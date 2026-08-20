@@ -1,0 +1,6 @@
+YEAR: 2026
+COPYRIGHT HOLDER: Huichuan Yu
+
+This package is distributed under GPL-3. The bundled model and reference
+resources retain their upstream copyrights and licenses. See inst/NOTICE and
+inst/extdata/resource_manifest.csv for per-resource provenance and terms.

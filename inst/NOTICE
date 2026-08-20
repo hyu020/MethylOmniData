@@ -1,0 +1,8 @@
+MethylOmniData bundles third-party model coefficients and reference matrices.
+Each resource retains its upstream copyright and license. The machine-readable
+inst/extdata/resource_manifest.csv records its source snapshot, checksum,
+license evidence, and redistribution review status.
+
+Redistribution review documents the evidence available on 2026-08-20 and is
+not legal advice. Users and redistributors remain responsible for confirming
+that their use complies with the applicable upstream terms.
