@@ -1,1 +1,1 @@
-inst/extdata/complex/MiAge.csv -text
+inst/extdata/** -text

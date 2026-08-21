@@ -46,13 +46,26 @@ validate_resource_manifest <- function(check_md5 = TRUE) {
   paths <- vapply(manifest$resource_id, methylomni_resource_path, character(1))
   exists <- nzchar(paths) & file.exists(paths)
   observed_bytes <- rep(NA_real_, length(paths))
-  observed_bytes[exists] <- file.info(paths[exists])$size
   observed_md5 <- rep(NA_character_, length(paths))
-  if (isTRUE(check_md5) && any(exists)) {
-    observed_md5[exists] <- unname(tools::md5sum(paths[exists]))
+  for (i in which(exists)) {
+    path <- paths[[i]]
+    raw <- readBin(path, what = "raw", n = file.info(path)$size)
+    if (grepl("\\.(csv|tsv|txt|json)$", path, ignore.case = TRUE)) {
+      crlf <- which(raw[-length(raw)] == as.raw(13L) & raw[-1L] == as.raw(10L))
+      if (length(crlf)) raw <- raw[-crlf]
+    }
+    observed_bytes[[i]] <- length(raw)
+    if (isTRUE(check_md5)) {
+      tmp <- tempfile("MethylOmniData-canonical-")
+      writeBin(raw, tmp)
+      observed_md5[[i]] <- unname(tools::md5sum(tmp))
+      unlink(tmp)
+    }
   }
   manifest$installed_path <- unname(paths)
   manifest$exists <- exists
+  manifest$observed_canonical_bytes <- observed_bytes
+  manifest$observed_canonical_md5 <- observed_md5
   manifest$bytes_match <- exists & observed_bytes == manifest$bytes
   manifest$md5_match <- if (isTRUE(check_md5)) {
     exists & tolower(observed_md5) == tolower(manifest$md5)

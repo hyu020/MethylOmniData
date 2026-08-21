@@ -27,6 +27,9 @@ validate_resource_manifest(check_md5 = TRUE)
 }
 \value{The manifest and validation functions return data frames. Path functions
 return one or more installed paths, or an empty string when unavailable.}
+\details{For plain-text resources, byte counts and MD5 checksums use canonical
+LF line endings so validation is stable across Windows and Unix checkouts.
+Binary resources are compared byte for byte.}
 \examples{
 manifest <- methylomni_data_manifest()
 head(manifest)
