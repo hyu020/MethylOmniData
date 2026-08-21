@@ -1,7 +1,7 @@
 Package: MethylOmniData
 Type: Package
 Title: Versioned Model and Reference Data for MethylOmni
-Version: 0.2.2.9000
+Version: 0.3.0
 Authors@R: person("Huichuan", "Yu", role = c("aut", "cre"),
     email = "yuhch5@mail.sysu.edu.cn",
     comment = c(ORCID = "0000-0001-8357-1615",

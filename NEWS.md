@@ -1,4 +1,4 @@
-# MethylOmniData 0.2.2.9000
+# MethylOmniData 0.3.0
 
 - Added a complete, checksummed, license-aware resource manifest.
 - Added resource lookup and manifest validation helpers.
