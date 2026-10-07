@@ -1,15 +1,15 @@
 Package: MethylOmniData
 Type: Package
 Title: Versioned Model and Reference Data for MethylOmni
-Version: 0.3.0
+Version: 0.4.0
 Authors@R: person("Huichuan", "Yu", role = c("aut", "cre"),
     email = "yuhch5@mail.sysu.edu.cn",
     comment = c(ORCID = "0000-0001-8357-1615",
     affiliation = "The Sixth Affiliated Hospital, Sun Yat-sen University"))
 Description: Provides versioned coefficient tables and reference matrices used
     by MethylOmni. Each resource is accompanied by source, checksum, and
-    redistribution metadata. This development snapshot separates data from the
-    lightweight computational package.
+    redistribution metadata. Model resources are distributed separately from
+    the computational package.
 License: GPL-3 + file LICENSE
 URL: https://github.com/hyu020/MethylOmniData
 BugReports: https://github.com/hyu020/MethylOmniData/issues
